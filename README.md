@@ -1,16 +1,16 @@
 # garden-watch
 
-This is a leiningen plugin that just watches for changes to your Garden source files
+This is a leiningen plugin that just watches for changes to your [Garden](https://github.com/noprompt/garden) source files. ***"Garden is a library for rendering CSS in Clojure and ClojureScript"***.
 
 
 ## Usage
 
 
-To use this plugin across your projects, put `[garden-watch "0.1.0"]` into the `:plugins` vector of your `:user` profile.
+To use this plugin across your projects, put `[garden-watch "0.1.1"]` into the `:plugins` vector of your `:user` profile.
 
-Or if you are on Leiningen 1.x do `lein plugin install garden-watch 0.1.0`.
+Or if you are on Leiningen 1.x do `lein plugin install garden-watch 0.1.1`.
 
-To install this plugin at a project level, put `[garden-watch "0.1.0"]` into the `:plugins` vector of your project.clj.
+To install this plugin at a project level, put `[garden-watch "0.1.1"]` into the `:plugins` vector of your project.clj.
 
 You can set this configuration `{:garden-watch {:input-dir "in/" :output-dir "out/"}}` in your project.clj. Then you can just call the plugin like so.
 

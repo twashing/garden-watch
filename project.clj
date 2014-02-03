@@ -1,5 +1,5 @@
-(defproject garden-watch "0.1.0"
-  :description "FIXME: write description"
+(defproject garden-watch "0.1.1"
+  :description "Garden source to CSS watcher and converter"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
