@@ -10,6 +10,8 @@
   (def cdx-form (read-string cdx))
 
   (def result-css (garden/css cdx-form))
+
+  (println (str "writing out file: " to-path))
   (spit to-path result-css))
 
 
@@ -53,7 +55,7 @@
                        output-file-name (str output-final
                                              java.io.File/separator
                                              (string/replace-first (. file getName) input-file-extension "")
-                                             ".html")]
+                                             ".css")]
                    (gen-css file output-file-name))))))
          input-final)
 
