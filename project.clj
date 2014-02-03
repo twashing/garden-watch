@@ -1,6 +1,6 @@
 (defproject garden-watch "0.1.1"
   :description "Garden source to CSS watcher and converter"
-  :url "http://example.com/FIXME"
+  :url "https://github.com/twashing/garden-watch"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
