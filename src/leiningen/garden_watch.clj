@@ -1,7 +1,9 @@
 (ns leiningen.garden-watch
   (:require [clojure.string :as string]
             [filevents.core :as filevents]
-            [garden.core :as garden]))
+            [garden.core :as garden]
+            [garden.media :refer :all]
+            [garden.stylesheet :refer :all]))
 
 
 (defn gen-css [from-path to-path]
@@ -9,7 +11,9 @@
   (def cdx (slurp from-path))
   (def cdx-form (read-string cdx))
 
+  ;;(println "input[" cdx-form "]")
   (def result-css (garden/css cdx-form))
+  ;;(println "output[" result-css "]")
 
   (println (str "writing out file: " to-path))
   (spit to-path result-css))
