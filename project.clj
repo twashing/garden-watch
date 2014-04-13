@@ -1,4 +1,4 @@
-(defproject garden-watch "0.1.2"
+(defproject garden-watch "0.1.3-SNAPSHOT"
   :description "Garden source to CSS watcher and converter"
   :url "https://github.com/twashing/garden-watch"
   :license {:name "Eclipse Public License"
