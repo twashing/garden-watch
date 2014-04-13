@@ -20,6 +20,7 @@
 
 (defn garden-watch [project & args]
 
+  (timbre/set-level! :debug)
   (let [input-dir (-> project :garden-watch :input-dir)
         output-dir (-> project :garden-watch :output-dir)
 
