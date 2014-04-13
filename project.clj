@@ -7,7 +7,7 @@
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [com.taoensso/timbre "3.1.6"]
                  [filevents "0.1.0"]
-                 [zengarden "0.1.2"]]
+                 [zengarden "0.1.5"]]
 
   :profiles {:dev {:source-paths ["dev"]
                    :dependencies [[org.clojure/tools.namespace "0.2.4"]
