@@ -1,22 +1,21 @@
 (ns leiningen.garden-watch
   (:require [clojure.string :as string]
             [filevents.core :as filevents]
-            [garden.core :as garden]
-            [garden.media :refer :all]
-            [garden.stylesheet :refer :all]))
+            [taoensso.timbre :as timbre]
+            [zengarden.core :as zc]))
 
 
 (defn gen-css [from-path to-path]
 
-  (def cdx (slurp from-path))
-  (def cdx-form (read-string cdx))
+  (let [cdx (slurp from-path)
+        cdx-form (read-string cdx)
 
-  ;;(println "input[" cdx-form "]")
-  (def result-css (garden/css cdx-form))
-  ;;(println "output[" result-css "]")
+        _ (timbre/debug "input[" cdx-form "]")
+        result-css (zc/css cdx-form)
+        _ (timbre/debug "output[" result-css "]") ]
 
-  (println (str "writing out file: " to-path))
-  (spit to-path result-css))
+    (timbre/debug (str "writing out file: " to-path))
+    (spit to-path result-css)))
 
 
 (defn garden-watch [project & args]
@@ -40,10 +39,10 @@
 
 
     (if-not (and input-final output-final)
-      (println "ERROR: both :input-dir and :output-dir not specified. Exiting")
+      (timbre/error "Both :input-dir and :output-dir not specified. Exiting")
       (do
 
-        (println "garden-watch started...")
+        (timbre/debug "garden-watch started...")
 
         ;; Watch the directory
         (filevents/watch
@@ -54,7 +53,7 @@
                      (re-find #"\.clj" (.getName file)))
                (do
 
-                 (println "garden-watch[" kind "]: " file)
+                 (timbre/debug "garden-watch[" kind "]: " file)
                  (let [input-file-extension (if (re-find #"\.edn" (.getName file)) #"\.edn" #"\.clj")
                        output-file-name (str output-final
                                              java.io.File/separator
