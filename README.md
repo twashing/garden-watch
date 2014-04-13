@@ -6,7 +6,7 @@ This is a leiningen plugin that just watches for changes to your [Garden](https:
 ## Usage
 
 
-To use this plugin across your projects, put `[garden-watch "0.1.5"]` into the `:plugins` vector of your `:user` profile.
+To use this plugin across your projects, put `[garden-watch "0.1.6"]` into the `:plugins` vector of your `:user` profile.
 
 Or if you are on Leiningen 1.x do `lein plugin install garden-watch 0.1.1`.
 
